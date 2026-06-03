@@ -16,7 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://cf2ld5qvlv6u3" path="res://assets/kenney_platformer-art-deluxe/Base pack/Player/p3_walk/PNG/p3_walk11.png" id="13_l71n6"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dqkch"]
-radius = 35.0
+radius = 23.0
 height = 96.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_1jxqw"]
