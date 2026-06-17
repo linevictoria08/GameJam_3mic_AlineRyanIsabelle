@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://o0qk0iwtyib3"]
+
+[ext_resource type="Script" uid="uid://k4gkr1h0s4ln" path="res://scenes/coin.gd" id="1_0wmmx"]
+[ext_resource type="Texture2D" uid="uid://cj6dsmi46ywks" path="res://assets/kenney_platformer-art-deluxe/Base pack/HUD/hud_coins.png" id="2_o4aag"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_o4aag"]
+radius = 24.083189
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_s1asw"]
+particle_flag_disable_z = true
+direction = Vector3(0, -1, 0)
+initial_velocity_min = 80.0
+initial_velocity_max = 150.0
+gravity = Vector3(0, 98, 0)
+scale_min = 2.0
+scale_max = 4.0
+color = Color(1, 0.84313726, 0, 1)
+
+[node name="coins" type="Node2D" unique_id=1133215047]
+
+[node name="coin" type="Area2D" parent="." unique_id=1359830476]
+script = ExtResource("1_0wmmx")
+
+[node name="Sprite2D" type="Sprite2D" parent="coin" unique_id=1363847848]
+texture = ExtResource("2_o4aag")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="coin" unique_id=1917729737]
+shape = SubResource("CircleShape2D_o4aag")
+
+[node name="Particles" type="GPUParticles2D" parent="coin" unique_id=1732120550]
+emitting = false
+lifetime = 4.0
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_s1asw")
+
+[connection signal="body_entered" from="coin" to="coin" method="_on_body_entered"]
