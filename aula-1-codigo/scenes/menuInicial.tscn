@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://m5fx63w57rvx"]
+
+[ext_resource type="Script" uid="uid://cjb3pf23lw0no" path="res://scenes/menu_inicial.gd" id="1_81crh"]
+[ext_resource type="Texture2D" uid="uid://c3bh3o5f7pgo2" path="res://assets/kenney_platformer-art-deluxe/Base pack/bg.png" id="1_p0uqc"]
+[ext_resource type="Texture2D" uid="uid://nfhx0fv6xacx" path="res://assets/kenney_platformer-art-deluxe/Base pack/Tiles/grass.png" id="2_81crh"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_jhs6u"]
+line_spacing = 50.0
+paragraph_spacing = 50.0
+font_size = 100
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4m7wy"]
+texture = ExtResource("2_81crh")
+
+[node name="MenuInicial" type="Control" unique_id=1275137784]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_81crh")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=2004494990]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_p0uqc")
+
+[node name="Coral" type="Label" parent="." unique_id=502312147]
+modulate = Color(0, 0.5411765, 1, 1)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -126.5
+offset_right = 126.5
+offset_bottom = 137.0
+grow_horizontal = 2
+text = "Coral"
+label_settings = SubResource("LabelSettings_jhs6u")
+
+[node name="JogarButton" type="Button" parent="." unique_id=1289568180]
+layout_mode = 0
+offset_left = 490.5
+offset_top = 137.0
+offset_right = 668.5
+offset_bottom = 233.0
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxTexture_4m7wy")
+text = "iniciá"
+icon_alignment = 1
+
+[connection signal="pressed" from="JogarButton" to="." method="_on_jogar_button_pressed"]

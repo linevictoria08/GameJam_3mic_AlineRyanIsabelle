@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://dltqjkjtn4s24"]
+
+[ext_resource type="Script" uid="uid://dxcpcda4sk2p8" path="res://scenes/gameover.gd" id="1_dy3ie"]
+
+[node name="Gameover" type="Control" unique_id=1941919230]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_dy3ie")
+
+[node name="GameOverLabel" type="Label" parent="." unique_id=1266261159]
+layout_mode = 0
+offset_left = 137.0
+offset_top = -2.0
+offset_right = 224.0
+offset_bottom = 21.0
+text = "Game Over"
+
+[node name="TentarNovamenteButton" type="Button" parent="." unique_id=1458929030]
+layout_mode = 0
+offset_left = 103.0
+offset_top = 39.0
+offset_right = 257.0
+offset_bottom = 70.0
+text = "Tentar Novamente
+"
+
+[connection signal="pressed" from="TentarNovamenteButton" to="." method="_on_tentar_novamente_button_pressed"]

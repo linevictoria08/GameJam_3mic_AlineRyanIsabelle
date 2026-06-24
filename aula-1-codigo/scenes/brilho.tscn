@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://c6fub2s28uue6"]
+
+[ext_resource type="Texture2D" uid="uid://7guipbm4xqdt" path="res://assets/kenney_platformer-art-deluxe/Base pack/Items/gemRed.png" id="1_nirap"]
+
+[node name="brilho" type="CanvasLayer" unique_id=252746591]
+
+[node name="Control" type="Control" parent="." unique_id=1543042741]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control" unique_id=1418042786]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect3" type="TextureRect" parent="Control/HBoxContainer" unique_id=294211340]
+layout_mode = 2
+texture = ExtResource("1_nirap")
+
+[node name="TextureRect2" type="TextureRect" parent="Control/HBoxContainer" unique_id=2045863893]
+layout_mode = 2
+texture = ExtResource("1_nirap")
+
+[node name="TextureRect" type="TextureRect" parent="Control/HBoxContainer" unique_id=2039696520]
+layout_mode = 2
+texture = ExtResource("1_nirap")

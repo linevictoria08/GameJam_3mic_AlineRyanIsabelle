@@ -8,8 +8,6 @@
 [ext_resource type="Texture2D" uid="uid://drh6pkylpw6sm" path="res://assets/kenney_platformer-art-deluxe/Base pack/Items/cloud1.png" id="4_e3sih"]
 [ext_resource type="PackedScene" uid="uid://o0qk0iwtyib3" path="res://scenes/coins.tscn" id="7_pa8r4"]
 [ext_resource type="PackedScene" uid="uid://d1v1mni61g41o" path="res://scenes/powerup_speed.tscn" id="8_15mv3"]
-[ext_resource type="PackedScene" uid="uid://bd0c7g464d5ef" path="res://scenes/enemy.tscn" id="9_e3sih"]
-[ext_resource type="PackedScene" uid="uid://blfu7022kdotg" path="res://scenes/killzone.tscn" id="10_2y5yt"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rus8k"]
 texture = ExtResource("1_bswci")
@@ -11686,9 +11684,6 @@ tile_set = SubResource("TileSet_fcfvj")
 [node name="Player" parent="." unique_id=1870099453 instance=ExtResource("2_rus8k")]
 position = Vector2(176, -138)
 
-[node name="coins" parent="." unique_id=1133215047 instance=ExtResource("7_pa8r4")]
-position = Vector2(890, -116)
-
 [node name="coins2" parent="." unique_id=243540712 instance=ExtResource("7_pa8r4")]
 position = Vector2(786, -119)
 
@@ -11697,37 +11692,3 @@ position = Vector2(681, -120)
 
 [node name="coins4" parent="." unique_id=2080557767 instance=ExtResource("8_15mv3")]
 position = Vector2(551, -125)
-
-[node name="Enemy" parent="." unique_id=18960051 instance=ExtResource("9_e3sih")]
-position = Vector2(948, -131)
-
-[node name="killzone" parent="." unique_id=1996701541 instance=ExtResource("10_2y5yt")]
-position = Vector2(-38, -68)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="killzone" unique_id=1473273310]
-position = Vector2(-108, 146)
-shape = SubResource("RectangleShape2D_2y5yt")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="killzone" unique_id=521386766]
-position = Vector2(1515, 157.5)
-shape = SubResource("RectangleShape2D_2os1m")
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="killzone" unique_id=2014162876]
-position = Vector2(-112, 961)
-shape = SubResource("RectangleShape2D_go7sj")
-
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="killzone" unique_id=1856285881]
-position = Vector2(-242, 1858)
-shape = SubResource("RectangleShape2D_7gny6")
-
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="killzone" unique_id=1953033802]
-position = Vector2(4519, 1880)
-shape = SubResource("RectangleShape2D_2aecg")
-
-[node name="CollisionShape2D6" type="CollisionShape2D" parent="killzone" unique_id=519737663]
-position = Vector2(2368.5, 1113.5)
-shape = SubResource("RectangleShape2D_6dial")
-
-[node name="CollisionShape2D7" type="CollisionShape2D" parent="killzone" unique_id=1879992467]
-position = Vector2(3710.5, 1113.5)
-shape = SubResource("RectangleShape2D_7nomh")
