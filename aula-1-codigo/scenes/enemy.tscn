@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://bd0c7g464d5ef"]
+
+[ext_resource type="Texture2D" uid="uid://b2vpx44t63ayq" path="res://assets/kenney_platformer-art-deluxe/Base pack/Enemies/flyDead.png" id="1_md0e3"]
+[ext_resource type="Texture2D" uid="uid://qaa6hdkm5sq2" path="res://assets/kenney_platformer-art-deluxe/Base pack/Enemies/flyFly1.png" id="2_4ra3w"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5uy6h"]
+radius = 17.029387
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_c4w8v"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_4ra3w")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[node name="Enemy" type="Node2D" unique_id=1938298599]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1484413964]
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=1849261679]
+texture = ExtResource("1_md0e3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=220242621]
+position = Vector2(-3, -1)
+shape = SubResource("CircleShape2D_5uy6h")
+
+[node name="FloorLeft" type="RayCast2D" parent="CharacterBody2D/CollisionShape2D" unique_id=274502496]
+target_position = Vector2(-26, 22)
+
+[node name="FloorRight" type="RayCast2D" parent="CharacterBody2D/CollisionShape2D" unique_id=744161094]
+target_position = Vector2(28, 23)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D" unique_id=1413101035]
+sprite_frames = SubResource("SpriteFrames_c4w8v")
+animation = &"walk"
+autoplay = "walk"
