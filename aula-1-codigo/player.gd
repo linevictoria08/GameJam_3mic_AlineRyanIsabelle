@@ -1,8 +1,14 @@
 extends CharacterBody2D
 
 
-const SPEED = 300.0
+var SPEED = 300.0
 const JUMP_VELOCITY = -400.0
+const SPEED_BOOST = 1000.0    
+# segundos de duração   
+const BOOST_DURATION = 5.0
+# variável que controla quando o power-up está ativado ou não
+var boosted = false
+
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
 
@@ -40,3 +46,24 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
+
+
+# ...restante do código
+
+# função que aplica o aumento de velocidade
+func apply_speed_boost():
+		# Se a variável boosted for true
+	if boosted:
+		return  # Sai da função sem fazer nada
+						# evita empilhar o efeito, ou seja, ter vários boosts de uma vez
+	# Senão, se a variável boosted for false, segue e muda para true
+	boosted = true
+	# Altere a velocidade para o valor da varíavel SPEED_BOOST
+	SPEED = SPEED_BOOST
+	# Cria um timer com a duração da variável BOOST_DURATION e pausa a função
+	# até que esse tempo termine
+	await get_tree().create_timer(BOOST_DURATION).timeout
+	# retorna a variável velocidade ao valor original
+	SPEED = 200.0
+	# volta a variável boosted para false, sinalizando que o power-up acabou
+	boosted = false

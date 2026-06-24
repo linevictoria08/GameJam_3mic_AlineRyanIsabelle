@@ -29,7 +29,6 @@ shape = SubResource("CircleShape2D_o4aag")
 
 [node name="Particles" type="GPUParticles2D" parent="coin" unique_id=1732120550]
 emitting = false
-lifetime = 4.0
 one_shot = true
 explosiveness = 1.0
 process_material = SubResource("ParticleProcessMaterial_s1asw")
