@@ -88,5 +88,4 @@ shape = SubResource("CapsuleShape2D_dqkch")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=106509912]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_1jxqw")
-animation = &"walk"
-frame_progress = 0.7948333
+animation = &"idle"
