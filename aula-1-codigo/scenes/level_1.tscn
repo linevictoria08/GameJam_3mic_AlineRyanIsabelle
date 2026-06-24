@@ -7,7 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://bhmjcjf53nv8d" path="res://assets/kenney_platformer-art-deluxe/Base pack/Items/cloud2.png" id="3_15mv3"]
 [ext_resource type="Texture2D" uid="uid://drh6pkylpw6sm" path="res://assets/kenney_platformer-art-deluxe/Base pack/Items/cloud1.png" id="4_e3sih"]
 [ext_resource type="PackedScene" uid="uid://o0qk0iwtyib3" path="res://scenes/coins.tscn" id="7_pa8r4"]
-[ext_resource type="PackedScene" uid="uid://d1v1mni61g41o" path="res://scenes/powerup_speed.tscn" id="8_15mv3"]
+[ext_resource type="PackedScene" uid="uid://c6fub2s28uue6" path="res://scenes/brilho.tscn" id="9_2y5yt"]
+[ext_resource type="PackedScene" uid="uid://b2eyojxjrv80p" path="res://scenes/estrelinha.tscn" id="9_e3sih"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rus8k"]
 texture = ExtResource("1_bswci")
@@ -11663,14 +11664,15 @@ tile_set = SubResource("TileSet_fcfvj")
 [node name="Player" parent="." unique_id=1870099453 instance=ExtResource("2_rus8k")]
 position = Vector2(176, -138)
 
-[node name="coins" parent="." unique_id=1133215047 instance=ExtResource("7_pa8r4")]
-position = Vector2(890, -116)
-
 [node name="coins2" parent="." unique_id=243540712 instance=ExtResource("7_pa8r4")]
 position = Vector2(786, -119)
 
 [node name="coins3" parent="." unique_id=1937209533 instance=ExtResource("7_pa8r4")]
 position = Vector2(681, -120)
 
-[node name="coins4" parent="." unique_id=2080557767 instance=ExtResource("8_15mv3")]
-position = Vector2(551, -125)
+[node name="Powerup_speed" parent="." unique_id=1932721954 instance=ExtResource("9_e3sih")]
+position = Vector2(3346, 868)
+
+[node name="brilho" parent="." unique_id=252746591 instance=ExtResource("9_2y5yt")]
+
+[connection signal="speed_collected" from="Powerup_speed" to="Player" method="_on_powerup_speed_speed_collected"]

@@ -67,3 +67,6 @@ func apply_speed_boost():
 	SPEED = 200.0
 	# volta a variável boosted para false, sinalizando que o power-up acabou
 	boosted = false
+func _on_powerup_speed_speed_collected(body: Variant) -> void:
+	if body.has_method("apply_speed_boost"):
+		body.apply_speed_boost()
